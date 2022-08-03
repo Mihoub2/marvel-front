@@ -1,0 +1,16 @@
+.home {
+  background-color: black;
+  color: white;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-content: center;
+}
+
+.jules {
+  width: 300px;
+  display: flex;
+  border: solid 3px red;
+  border-radius: 50%;
+}
