@@ -28,11 +28,10 @@ const Characters = () => {
             {data.results.map((item, index) => {
               const pic = item.thumbnail.path + "." + item.thumbnail.extension;
               return (
-                <Link to={`character/${item._id}`}>
+                <Link to={`/character/${item._id}`}>
                   {/* {console.log(item._id)} */}
                   <div className="line">
-                    {/* <div>{movie.name};</div>; */}
-
+                    {/* <div>{item.name};</div>; */}
                     <img className="jules" src={pic} alt="" />
                   </div>
                 </Link>

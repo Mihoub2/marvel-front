@@ -12,10 +12,10 @@ const CharacterById = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://marvelbackmihoub.herokuapp.com/comics/character${id}`
+          `https://marvelbackmihoub.herokuapp.com/comics/character/${id}`
         );
         setData(response.data);
-        // console.log(response.data);
+        console.log(response.data);
       } catch (error) {
         console.log(error.response);
       }
@@ -31,17 +31,18 @@ const CharacterById = () => {
         <h1>En cours de chargement!</h1>
       ) : (
         <>
-          <div className="home">
+          <div>test</div>
+          {/* <div className="home">
             {data.results.map((item, index) => {
-              const pic = item.thumbnail.path + "." + item.thumbnail.extension;
+              console.log(item);
+              // const pic = item.thumbnail.path + "." + item.thumbnail.extension;
               return (
                 <div className="line">
-                  <div>{item.name};</div>;
-                  <img className="jules" src={pic} alt="" />
+                  <div>{item.name};</div>;{console.log(item.name)}
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </>
       )}
     </div>
