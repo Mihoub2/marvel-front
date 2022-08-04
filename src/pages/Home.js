@@ -1,5 +1,4 @@
 import "./home.scss";
-import marvel from "../assets/marvel.jpeg";
 import { Link } from "react-router-dom";
 
 const Home = () => {
