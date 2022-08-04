@@ -14,7 +14,6 @@ const Comics = () => {
         "https://marvelbackmihoub.herokuapp.com/comics"
       );
       setData(response.data);
-      // console.log(response.data.results[0].name);
       setIsLoading(false);
     };
     fetchData();
@@ -58,11 +57,14 @@ const Comics = () => {
                     ) : (
                       "No description for this comics, but it may be awesome! Click for more informations !"
                     )}
-                    {pic.includes("image_not_available") ? (
-                      <img className="comicsPic" src={deadpool} alt="" />
-                    ) : (
-                      <img className="comicsPic" src={pic} alt="" />
-                    )}
+                    <div className="comicsPic">
+                      {" "}
+                      {pic.includes("image_not_available") ? (
+                        <img src={deadpool} alt="" />
+                      ) : (
+                        <img src={pic} alt="" />
+                      )}
+                    </div>
                   </div>
                 </Link>
               );

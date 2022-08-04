@@ -1,0 +1,37 @@
+.mainCharactId {
+  display: flex;
+
+  max-width: 100%;
+  padding: 20px;
+  height: 1000px;
+}
+.charactId {
+  width: 100%;
+}
+
+.block {
+  display: flex;
+  flex: 1;
+  margin-left: 10px;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  height: auto;
+
+  border-radius: 20px;
+  justify-content: space-between;
+  background-color: white;
+}
+.blockPic {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.itemTitle {
+  font-size: 20px;
+  color: red;
+}
+.IdContainer {
+  background-color: black;
+}

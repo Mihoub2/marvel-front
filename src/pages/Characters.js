@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./characters.scss";
+import deadpool from "../assets/deadpool.jpeg";
 
 const Characters = () => {
   const [data, setData] = useState(null);
@@ -24,23 +26,32 @@ const Characters = () => {
   }, []);
 
   return (
-    <div className="backContainer">
+    <div className="caracContainer">
       {isLoading === true ? (
         <h1>En cours de chargement!</h1>
       ) : (
         <>
-          <div className="comicsContainer">
+          <div className="charactContainer">
             {data.results.map((item, index) => {
               const pic = item.thumbnail.path + "." + item.thumbnail.extension;
               return (
-                <Link to={`/comics/${item._id}`}>
-                  {/* {console.log(item._id)} */}
-                  <div className="line">
-                    <div className="description">{item.name}</div>
+                <Link className="linkcharac" to={`/comics/${item._id}`}>
+                  <div className="characLine">
+                    <div className="caractName">{item.name}</div>
 
-                    <div className="description">{item.description}</div>
+                    {item.description ? (
+                      <div className="caracDescription">{item.description}</div>
+                    ) : (
+                      "No description for this superHero, but it may be awesome! Click for more informations !"
+                    )}
 
-                    <img className="jules" src={pic} alt="" />
+                    <div className="charactPic">
+                      {pic.includes("image_not_available") ? (
+                        <img className="realPic" src={deadpool} alt="" />
+                      ) : (
+                        <img className="realPic" src={pic} alt="" />
+                      )}
+                    </div>
                   </div>
                 </Link>
               );

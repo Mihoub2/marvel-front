@@ -1,22 +1,21 @@
-.description {
-  font-size: 15px;
-}
-.comicsPic {
-  width: 150px;
-  display: flex;
-}
-
-.comicsContainer {
+.charactContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   background-color: black;
-}
-.backContainer {
-  display: flex;
+  padding: 10px;
 }
 
-.line {
+.charactPic {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.charactDescription {
+  margin-top: 20px;
+}
+.characLine {
   width: 300px;
   height: 350px;
   display: flex;
@@ -28,19 +27,15 @@
   margin-bottom: 20px;
   border-radius: 10px;
   justify-content: space-between;
+  border-radius: 20px;
 }
-.movieTitle {
+.caractName {
   font-size: 20px;
   color: red;
-  display: flex;
-  align-items: flex-start;
 }
-.description {
-  margin-top: 20px;
-  overflow: hidden;
+.realPic {
+  border-radius: 20px;
 }
-.link {
+.linkcharac {
   text-decoration: none;
-  display: flex;
-  padding: 10px;
 }
