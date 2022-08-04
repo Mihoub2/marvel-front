@@ -46,28 +46,41 @@ const Characters = () => {
             {data.results.map((item, index) => {
               const pic = item.thumbnail.path + "." + item.thumbnail.extension;
               return (
-                <Link className="linkcharac" to={`/comics/${item._id}`}>
+                <>
                   <div className="characLine">
-                    <div className="caractName">{item.name}</div>
-
-                    {item.description ? (
-                      <div className="caracDescription">{item.description}</div>
-                    ) : (
-                      <p>
-                        {item.name} Has no description, but it may be awesome!
-                        Click for more informations !"
-                      </p>
-                    )}
+                    <div className="upperLine">
+                      <Link className="linkcharac" to={`/comics/${item._id}`}>
+                        <div className="caractName">{item.name}</div>
+                      </Link>
+                      <a
+                        className="linkcharac"
+                        href="https://www.comicsblog.fr/images/news/crop2_deadpooloscartroll1.jpg"
+                        target="_blank"
+                      >
+                        {item.description ? (
+                          <div className="caracDescription">
+                            {item.description}
+                          </div>
+                        ) : (
+                          <p>
+                            {item.name} Has no description, but it may be
+                            awesome! Click for more informations !"
+                          </p>
+                        )}
+                      </a>
+                    </div>
 
                     <div className="charactPic">
-                      {pic.includes("image_not_available") ? (
-                        <img className="realPic" src={deadpool} alt="" />
-                      ) : (
-                        <img className="realPic" src={pic} alt="" />
-                      )}
+                      <Link className="linkcharac" to={`/comics/${item._id}`}>
+                        {pic.includes("image_not_available") ? (
+                          <img className="realPic" src={deadpool} alt="" />
+                        ) : (
+                          <img className="realPic" src={pic} alt="" />
+                        )}
+                      </Link>
                     </div>
                   </div>
-                </Link>
+                </>
               );
             })}
           </div>

@@ -1,7 +1,7 @@
 .home {
   background-color: black;
   color: white;
-  height: 1000px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +14,14 @@
   border: 10px solid black;
   background-color: black;
   border-radius: 20px;
+}
+.homeContainerB {
+  display: flex;
+  align-items: center;
+  border: 10px solid black;
+  background-color: black;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
 .homeInput {
   display: flex;
@@ -32,4 +40,7 @@
 }
 .home {
   background-image: url(https://static.posters.cz/image/1300/affiches-et-posters/marvel-classic-cover-i71854.jpg); /* The image used */
+}
+.chractB {
+  margin-bottom: 20px;
 }

@@ -15,7 +15,7 @@ const Home = () => {
       </div>
       <div className="characterSearch"></div>
 
-      <div className="homeContainer">
+      <div className="homeContainerB">
         <h1>Characters Research !</h1>
         <Link className="charactersButton" to="/characters">
           <button className="charactB">Characters</button>{" "}

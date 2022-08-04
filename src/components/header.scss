@@ -4,6 +4,7 @@
   background-color: #f3031b;
   justify-content: center;
   justify-content: space-around;
+  border-bottom: 20px solid black;
 }
 img {
   width: 400px;
@@ -16,20 +17,15 @@ img {
 .comicsButton {
   display: flex;
   align-items: center;
-  text-decoration: none;
 }
 .comicsB {
   background-color: #273ea3;
 }
 .charactB {
   background-color: #69ae55;
+  margin-bottom: 10px;
 }
-.charactersButton {
-  display: flex;
-  align-items: center;
 
-  text-decoration: none;
-}
 button {
   display: inline-block;
   border-radius: 25px;

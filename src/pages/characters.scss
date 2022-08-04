@@ -2,18 +2,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: black;
   padding: 10px;
 }
 
 .charactPic {
-  width: 150px;
   display: flex;
   justify-content: center;
+  height: 50%;
 }
 
 .charactDescription {
   margin-top: 20px;
+  text-decoration: none;
 }
 .characLine {
   width: 300px;
@@ -22,20 +22,32 @@
   flex-direction: column;
   align-items: center;
   color: black;
-  border: 2px solid #202020;
-  background-color: white;
   margin-bottom: 20px;
   border-radius: 10px;
   justify-content: space-between;
-  border-radius: 20px;
+  border: solid 1px black;
+}
+.characLine :hover {
+  background-image: url(../assets/deadpoolsleep.jpeg);
 }
 .caractName {
   font-size: 20px;
   color: red;
 }
 .realPic {
-  border-radius: 20px;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
 }
 .linkcharac {
   text-decoration: none;
+}
+.upperLine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+  justify-content: space-between;
 }

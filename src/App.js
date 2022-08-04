@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // component
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 // pages
 import Home from "./pages/Home";
@@ -20,6 +21,7 @@ function App() {
         <Route path="/characters" element={<Characters />} />
         <Route path="/comics/:characterId" element={<CharacterById />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
