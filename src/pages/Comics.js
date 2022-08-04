@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./comics.scss";
+import deadpool from "../assets/deadpool.jpeg";
 
 const Comics = () => {
   const [data, setData] = useState(null);
@@ -19,21 +21,48 @@ const Comics = () => {
   }, []);
 
   return (
-    <div>
+    <div className="backContainer">
       {isLoading === true ? (
         <h1>En cours de chargement!</h1>
       ) : (
         <>
-          <div className="home">
+          <div className="comicsContainer">
             {data.results.map((movie, index) => {
+              const title = movie.title;
+
+              const objTitle = { title };
+              const arrTitle = Object.entries(objTitle);
               const pic =
                 movie.thumbnail.path + "." + movie.thumbnail.extension;
-              return (
-                <Link to={`/character/${movie._id}`}>
-                  <div className="line">
-                    {/* <div>{movie.name};</div>; */}
 
-                    <img className="jules" src={pic} alt="" />
+              // console.log(arrTitle[0]);
+              return (
+                <Link className="link" to={`/character/${movie._id}`}>
+                  <div className="line">
+                    <div className="monvieTitle">
+                      {arrTitle.includes("2009 Mini-Poster 6 (2009) #1") ? (
+                        <button
+                          onClick={() => {
+                            <Link to={"/"}></Link>;
+                          }}
+                        >
+                          <p>Deadpool Error!</p>
+                        </button>
+                      ) : (
+                        <div className="movieTitle">{arrTitle.sort()}</div>
+                      )}
+                    </div>
+
+                    {movie.description ? (
+                      <div className="description">{movie.description}</div>
+                    ) : (
+                      "No description for this comics, but it may be awesome! Click for more informations !"
+                    )}
+                    {pic.includes("image_not_available") ? (
+                      <img className="comicsPic" src={deadpool} alt="" />
+                    ) : (
+                      <img className="comicsPic" src={pic} alt="" />
+                    )}
                   </div>
                 </Link>
               );

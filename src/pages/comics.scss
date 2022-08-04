@@ -1,0 +1,44 @@
+.description {
+  font-size: 15px;
+  padding: 20px;
+  overflow: hidden;
+}
+.comicsPic {
+  width: 150px;
+  display: flex;
+  border-radius: 50%;
+}
+
+.comicsContainer {
+  //   background-color: #202020;
+  color: white;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.backContainer {
+  background-color: red;
+}
+
+.line {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  border: 2px solid #202020;
+  background-color: white;
+  margin-bottom: 20px;
+}
+.movieTitle {
+  font-size: 19px;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}
+.link {
+  text-decoration: none;
+}

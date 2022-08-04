@@ -1,8 +1,9 @@
 import "./home.scss";
+import { useState, useEffect } from "react";
 
-const Home = ({}) => {
-  console.log();
+import axios from "axios";
 
+const Home = () => {
   return <div>home</div>;
 };
 

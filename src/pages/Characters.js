@@ -8,10 +8,15 @@ const Characters = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        "https://marvelbackmihoub.herokuapp.com/characters"
-      );
-      setData(response.data);
+      try {
+        const response = await axios.get(
+          "https://marvelbackmihoub.herokuapp.com/characters"
+        );
+        setData(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+
       // console.log(response.data.results[0].name);
       setIsLoading(false);
     };
@@ -19,19 +24,22 @@ const Characters = () => {
   }, []);
 
   return (
-    <div>
+    <div className="backContainer">
       {isLoading === true ? (
         <h1>En cours de chargement!</h1>
       ) : (
         <>
-          <div className="home">
+          <div className="comicsContainer">
             {data.results.map((item, index) => {
               const pic = item.thumbnail.path + "." + item.thumbnail.extension;
               return (
-                <Link to={`/character/${item._id}`}>
+                <Link to={`/comics/${item._id}`}>
                   {/* {console.log(item._id)} */}
                   <div className="line">
-                    {/* <div>{item.name};</div>; */}
+                    <div className="description">{item.name}</div>
+
+                    <div className="description">{item.description}</div>
+
                     <img className="jules" src={pic} alt="" />
                   </div>
                 </Link>

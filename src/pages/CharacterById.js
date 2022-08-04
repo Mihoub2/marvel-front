@@ -2,8 +2,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const CharacterById = () => {
-  const { id } = useParams();
+const CharacterById = ({}) => {
+  const { characterId } = useParams();
 
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
@@ -12,7 +12,7 @@ const CharacterById = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://marvelbackmihoub.herokuapp.com/comics/character/${id}`
+          `https://marvelbackmihoub.herokuapp.com/comics/${characterId}`
         );
         setData(response.data);
         console.log(response.data);
@@ -23,7 +23,7 @@ const CharacterById = () => {
     };
 
     fetchData();
-  }, [id]);
+  }, [characterId]);
 
   return (
     <div>
@@ -32,17 +32,19 @@ const CharacterById = () => {
       ) : (
         <>
           <div>test</div>
-          {/* <div className="home">
-            {data.results.map((item, index) => {
+          <div className="home">
+            {data.comics.map((item, index) => {
               console.log(item);
-              // const pic = item.thumbnail.path + "." + item.thumbnail.extension;
+              const pic = item.thumbnail.path + "." + item.thumbnail.extension;
               return (
                 <div className="line">
-                  <div>{item.name};</div>;{console.log(item.name)}
+                  <img src={pic} alt="" />
+
+                  <div>{item.title};</div>
                 </div>
               );
             })}
-          </div> */}
+          </div>
         </>
       )}
     </div>
