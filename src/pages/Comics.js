@@ -14,7 +14,7 @@ const Comics = () => {
         "https://marvelbackmihoub.herokuapp.com/comics"
       );
       setData(response.data);
-      console.log(response.data.results[0].name);
+      // console.log(response.data.results[0].name);
       setIsLoading(false);
     };
     fetchData();
