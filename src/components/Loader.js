@@ -11,6 +11,7 @@ const Loader = () => {
   }, []);
   return (
     <div className="loader">
+      {loader}
       <img className="gif" src={deadpool} alt="ok" />
     </div>
   );
