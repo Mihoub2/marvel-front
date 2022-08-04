@@ -1,5 +1,6 @@
 import "./home.scss";
 import marvel from "../assets/marvel.jpeg";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -8,17 +9,17 @@ const Home = () => {
 
       <div className="homeContainer">
         <h1>Comics Research !</h1>
-        <input className="homeInput" type="text" placeholder="find a comic!" />
+        <Link className="comicsButton" to="/comics">
+          <button className="comicsB">Comics</button>{" "}
+        </Link>
       </div>
       <div className="characterSearch"></div>
 
       <div className="homeContainer">
         <h1>Characters Research !</h1>
-        <input
-          className="homeInput"
-          type="text"
-          placeholder="find a character!"
-        />
+        <Link className="charactersButton" to="/characters">
+          <button className="charactB">Characters</button>{" "}
+        </Link>
       </div>
     </div>
   );

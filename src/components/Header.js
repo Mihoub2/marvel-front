@@ -1,17 +1,17 @@
 import logo from "../assets/logo.jpeg";
 import "./header.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = ({}) => {
   return (
     <div className="Header">
       <div className="leftButton">
-        <Link className="comicsButton" to="/comics">
+        {/* <Link className="comicsButton" to="/comics">
           <button className="comicsB">Comics</button>{" "}
         </Link>
         <Link className="charactersButton" to="/characters">
           <button className="charactB">Characters</button>{" "}
-        </Link>
+        </Link> */}
       </div>
       <Link to="/">
         <img src={logo} alt="" />

@@ -7,7 +7,7 @@ import deadpool from "../assets/deadpool.jpeg";
 const Characters = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,7 +53,10 @@ const Characters = () => {
                     {item.description ? (
                       <div className="caracDescription">{item.description}</div>
                     ) : (
-                      "No description for this superHero, but it may be awesome! Click for more informations !"
+                      <p>
+                        {item.name} Has no description, but it may be awesome!
+                        Click for more informations !"
+                      </p>
                     )}
 
                     <div className="charactPic">
