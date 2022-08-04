@@ -56,7 +56,7 @@ const Characters = () => {
                     <a
                       className="linkcharac"
                       href="https://www.comicsblog.fr/images/news/crop2_deadpooloscartroll1.jpg"
-                      target="_blank"
+                      // target="_blank"
                     >
                       {item.description ? (
                         <div className="caracDescription">
