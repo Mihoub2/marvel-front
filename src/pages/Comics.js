@@ -58,11 +58,10 @@ const Comics = () => {
                       "No description for this comics, but it may be awesome! Click for more informations !"
                     )}
                     <div className="comicsPic">
-                      {" "}
                       {pic.includes("image_not_available") ? (
-                        <img src={deadpool} alt="" />
+                        <img className="realcomicsPic" src={deadpool} alt="" />
                       ) : (
-                        <img src={pic} alt="" />
+                        <img className="realcomicsPic" src={pic} alt="" />
                       )}
                     </div>
                   </div>

@@ -7,12 +7,13 @@ import deadpool from "../assets/deadpool.jpeg";
 const Characters = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [input, setInput] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://marvelbackmihoub.herokuapp.com/characters"
+          `https://marvelbackmihoub.herokuapp.com/characters?name=${input}`
         );
         setData(response.data);
       } catch (error) {
@@ -23,7 +24,7 @@ const Characters = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [input]);
 
   return (
     <div className="caracContainer">
@@ -31,6 +32,16 @@ const Characters = () => {
         <h1>En cours de chargement!</h1>
       ) : (
         <>
+          <div>
+            <input
+              type="text"
+              placeholder="Search your champ!!"
+              value={input}
+              onChange={(event) => {
+                setInput(event.target.value);
+              }}
+            />
+          </div>
           <div className="charactContainer">
             {data.results.map((item, index) => {
               const pic = item.thumbnail.path + "." + item.thumbnail.extension;

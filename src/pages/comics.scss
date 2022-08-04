@@ -2,7 +2,6 @@
   font-size: 15px;
 }
 .comicsPic {
-  width: 150px;
   display: flex;
 }
 
@@ -43,4 +42,9 @@
   text-decoration: none;
   display: flex;
   padding: 10px;
+}
+.realcomicsPic {
+  border-radius: 20px;
+  height: 180px;
+  width: 170px;
 }
