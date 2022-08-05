@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=IBM+Plex+Sans:wght@400;700&family=Marvel:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   /* font-family: "IBM Plex Sans", sans-serif; */
   font-family: "Marvel", sans-serif;
-  /* font-family: "Roboto", sans-serif; */
 }

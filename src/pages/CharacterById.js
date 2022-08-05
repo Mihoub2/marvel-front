@@ -17,7 +17,7 @@ const CharacterById = () => {
           `https://marvelbackmihoub.herokuapp.com/comics/${characterId}`
         );
         setData(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.log(error.response);
       }
@@ -33,7 +33,24 @@ const CharacterById = () => {
         <h1>En cours de chargement!</h1>
       ) : (
         <>
-          <h1 className="mainTitle"> Your champ is in those comics !</h1>
+          <div className="upperHero">
+            {data.thumbnail.path +
+            "." +
+            data.thumbnail.extension.includes("image_not_available") ? (
+              <img className="blockPic" src={deadpool} alt="" />
+            ) : (
+              <img
+                className="blockPic"
+                src={data.thumbnail.path + "." + data.thumbnail.extension}
+                alt=""
+              />
+            )}
+            <p className="heroDescription">
+              {data.description ? data.description : "nothing about him!"}
+            </p>
+          </div>
+
+          <div></div>
           <div className="mainCharactId">
             {data.comics.map((item, index) => {
               console.log(item);
@@ -44,7 +61,11 @@ const CharacterById = () => {
                   <div className="charactId">
                     <div className="block">
                       <div className="itemTitle">{item.title}</div>
-                      <div>{item.description}</div>
+                      <div>
+                        {item.description
+                          ? item.description
+                          : "Nothing about this comic!"}
+                      </div>
 
                       <div>
                         {pic.includes("image_not_available") ? (

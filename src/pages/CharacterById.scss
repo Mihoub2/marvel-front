@@ -1,23 +1,37 @@
 .mainCharactId {
   display: flex;
+  width: 100%;
+  // padding: 20px;
+  // height: 1000px;
+  overflow-y: scroll;
+}
 
-  max-width: 100%;
-  padding: 20px;
-  height: 1000px;
+.IdContainer {
+  font-family: "Hanalei Fill";
 }
 .charactId {
   width: 100%;
 }
+.upperHero {
+  font-family: "Marvel", sans-serif;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  flex-direction: column;
+}
+.heroDescription {
+  color: white;
+}
 .block {
   display: flex;
-  flex: 1;
+  flex-wrap: wrap;
+  height: 500px;
   margin-left: 10px;
   flex-direction: column;
   align-items: center;
   border: 1px solid black;
-  height: auto;
-
   border-radius: 20px;
   justify-content: space-between;
   background-color: white;

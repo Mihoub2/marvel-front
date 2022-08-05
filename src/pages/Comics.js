@@ -29,6 +29,7 @@ const Comics = () => {
         <div className="comicsContainer">
           {data.results.map((movie, index) => {
             const title = movie.title;
+            console.log(title);
 
             const objTitle = { title };
             const arrTitle = Object.entries(objTitle);
@@ -48,7 +49,7 @@ const Comics = () => {
                           <p>Deadpool Error!</p>
                         </button>
                       ) : (
-                        <div className="movieTitle">{arrTitle.sort()}</div>
+                        <div className="movieTitle">{title}</div>
                       )}
                     </div>
 

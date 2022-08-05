@@ -3,30 +3,29 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+  font-family: "Marvel", sans-serif;
 }
-
 .charactPic {
   display: flex;
   justify-content: center;
   height: 50%;
 }
+#root {
+  background-color: black;
+}
 .realInput {
-  margin-left: 1400px;
   width: 300px;
   height: 80px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 20px;
   text-align: center;
 }
 .charactInput {
   font-size: 20px;
-  width: 200px;
   height: 100px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 20px;
 }
 .charactDescription {
   margin-top: 20px;
@@ -43,10 +42,9 @@
   border-radius: 10px;
   justify-content: space-between;
   border: solid 1px black;
+  background-color: white;
 }
-.characLine :hover {
-  background-image: url(../assets/deadpoolsleep.jpeg);
-}
+
 .caractName {
   font-size: 20px;
   color: red;
