@@ -50,7 +50,7 @@ const Characters = () => {
               <>
                 <div className="characLine">
                   <div className="upperLine">
-                    <Link className="linkcharac" to={`/comics/${item._id}`}>
+                    <Link className="linkcharac" to={`/character/${item._id}`}>
                       <div className="caractName">{item.name}</div>
                     </Link>
                     <a

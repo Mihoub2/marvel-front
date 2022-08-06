@@ -17,9 +17,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/comics" element={<Comics />} />
-        <Route path="/characters" element={<Characters />} />
-        <Route path="/comics/:characterId" element={<CharacterById />} />
+        <Route path="/comics/:page" element={<Comics />} />
+        <Route path="/comics/" element={<Comics />} />
+        <Route path="/characters" element={<Characters />} />{" "}
+        <Route path="/character/:characterId" element={<CharacterById />} />
       </Routes>
       <Footer />
     </Router>

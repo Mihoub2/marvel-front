@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./comics.scss";
 import deadpool from "../assets/deadpool.jpeg";
 import Loader from "../components/Loader";
@@ -8,17 +8,22 @@ import Loader from "../components/Loader";
 const Comics = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  // const [page, setPage] = useState(1);
+  const [maxPage, setMaxPage] = useState(null);
+  const { page } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://marvelbackmihoub.herokuapp.com/comics"
+        `https://marvelbackmihoub.herokuapp.com/comics?page=${page}`
       );
+      setMaxPage(Math.trunc(response.data.count / 100) + 1);
       setData(response.data);
+
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [page]);
 
   return isLoading ? (
     <Loader />
@@ -26,10 +31,18 @@ const Comics = () => {
     <div className="backContainer">
       (
       <>
+        <div>
+          {[...Array(maxPage)].map((val, index) => {
+            return (
+              <Link to={`/comics/${index + 1}`} className="Comics">
+                {index + 1} &nbsp;
+              </Link>
+            );
+          })}
+        </div>
         <div className="comicsContainer">
           {data.results.map((movie, index) => {
             const title = movie.title;
-            console.log(title);
 
             const objTitle = { title };
             const arrTitle = Object.entries(objTitle);
