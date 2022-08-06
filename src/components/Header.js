@@ -12,6 +12,12 @@ const Header = () => {
         <Link className="favButton" to="/favorites">
           <button>Favorites</button>
         </Link>
+        <Link className="button" to="/signup">
+          <button>S'inscrire</button>
+        </Link>
+        <Link className="button" to="/connect">
+          <button>Se connecter</button>
+        </Link>
       </div>
     </div>
   );

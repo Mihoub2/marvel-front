@@ -72,7 +72,7 @@ const Characters = () => {
                   </div>
 
                   <div className="charactPic">
-                    <Link className="linkcharac" to={`/comics/${item._id}`}>
+                    <Link className="linkcharac" to={`/character/${item._id}`}>
                       {pic.includes("image_not_available") ? (
                         <img className="realPic" src={deadpool} alt="" />
                       ) : (
