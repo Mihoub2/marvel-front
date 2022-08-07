@@ -8,7 +8,7 @@ const Home = ({ token }) => {
 
       <div className="homeContainer">
         <h1>Comics Research !</h1>
-        <Link className="comicsButton" to={token ? "/comics" : "/connect"}>
+        <Link className="comicsButton" to={token ? "/connect" : "/comics"}>
           <button className="comicsB">Comics</button>
         </Link>
       </div>
@@ -18,7 +18,7 @@ const Home = ({ token }) => {
         <h1>Characters Research !</h1>
         <Link
           className="charactersButton"
-          to={token ? "/characters" : "/connect"}
+          to={token ? "/connect" : "/characters"}
         >
           <button className="charactB">Characters</button>
         </Link>

@@ -16,14 +16,14 @@ const Header = ({ token, setUser }) => {
         </Link>
         {token === null ? (
           <Link className="button" to="/signup">
-            <button>S'inscrire</button>
+            <button>SingUp!</button>
           </Link>
         ) : (
           ""
         )}
         {token === null ? (
           <Link className="button" to="/connect">
-            <button>Se connecter</button>
+            <button>Connect!</button>
           </Link>
         ) : (
           ""

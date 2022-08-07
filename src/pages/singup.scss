@@ -1,0 +1,40 @@
+.singupContainer {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.secondContainer {
+  border: 6px solid #5d5b5b;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.normalInput {
+  height: 50px;
+  border-radius: 20px;
+  width: 100%;
+
+  text-align: center;
+}
+.submitButton {
+  height: 50px;
+  border-radius: 20px;
+  width: 50px;
+
+  text-align: center;
+}

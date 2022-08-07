@@ -8,8 +8,27 @@
   border-top: 20px solid black;
   display: flex;
 }
-.FooterText {
+.footerContainer {
   display: flex;
+  align-items: center;
   color: white;
-  margin-left: 650px;
+  box-sizing: border-box;
+  @media (max-width: 1000px) {
+    padding: 70px 30px;
+  }
+}
+.colomns {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+.colomn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid black;
 }

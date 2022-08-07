@@ -31,15 +31,6 @@ const Comics = () => {
     <div className="backContainer">
       (
       <>
-        <div>
-          {[...Array(maxPage)].map((val, index) => {
-            return (
-              <Link to={`/comics/${index + 1}`} className="Comics">
-                {index + 1} &nbsp;
-              </Link>
-            );
-          })}
-        </div>
         <div className="comicsContainer">
           {data.results.map((movie, index) => {
             const title = movie.title;
@@ -84,6 +75,11 @@ const Comics = () => {
                 </div>
               </Link>
             );
+          })}
+        </div>{" "}
+        <div className="pages">
+          {[...Array(maxPage)].map((val, index) => {
+            return <Link to={`/comics/${index + 1}`}>{index + 1} &nbsp;</Link>;
           })}
         </div>
       </>

@@ -5,6 +5,7 @@ import "./connect.scss";
 
 const Connect = ({ setUser }) => {
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,16 +27,19 @@ const Connect = ({ setUser }) => {
       }
     } catch (error) {
       console.log(error.response);
+      if (error.response.status === 401) {
+        setErrorMessage("Make an effort!");
+      }
     }
   };
 
   return (
-    <div className="">
-      <div className="">
+    <div className="singupContainer">
+      <div className="secondContainer">
         <h2 className="">Se connecter</h2>{" "}
-        <form onSubmit={onSubmitForm}>
+        <form className="formContainer" onSubmit={onSubmitForm}>
           <input
-            className=""
+            className="normalInput"
             type="email"
             placeholder="Email"
             value={email}
@@ -44,7 +48,7 @@ const Connect = ({ setUser }) => {
             }}
           />
           <input
-            className=""
+            className="normalInput"
             type="password"
             placeholder="Mot de passe"
             value={password}
@@ -52,7 +56,8 @@ const Connect = ({ setUser }) => {
               setPassword(event.target.value);
             }}
           />
-          <input className="" type="submit" value="Se connecter" />
+          <input className="submitButton" type="submit" value="Connect!" />
+          <p style={{ color: "red" }}>{errorMessage}</p>
         </form>
       </div>
     </div>

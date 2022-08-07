@@ -6,7 +6,6 @@ import "./singup.scss";
 const Signup = ({ setUser }) => {
   const [email, setEmail] = useState();
   const [username, setUsername] = useState("");
-  const [newsLetter, setNewsLetter] = useState(false);
 
   const [errorMessage, setErrorMessage] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +22,6 @@ const Signup = ({ setUser }) => {
           email: email,
           username: username,
           password: password,
-          newsletter: newsLetter,
         }
       );
       if (response.data) {
@@ -35,14 +33,17 @@ const Signup = ({ setUser }) => {
       if (error.response.status === 409) {
         setErrorMessage("Cet email a déjà un compte !");
       }
+      if (error.response.status === 406) {
+        setErrorMessage("Bro, something's missing...!");
+      }
     }
   };
 
   return (
-    <div className="">
-      <div className="">
-        <h2 className="">S'inscrire</h2>
-        <form onSubmit={onSubmitForm}>
+    <div className="singupContainer">
+      <div className="secondContainer">
+        <h2 className="">Become a champ!</h2>
+        <form className="formContainer" onSubmit={onSubmitForm}>
           <input
             className="normalInput"
             type="Username"
@@ -70,18 +71,8 @@ const Signup = ({ setUser }) => {
               setPassword(event.target.value);
             }}
           />
-          <input
-            className="checkbox"
-            type="checkbox"
-            value={newsLetter}
-            onChange={(event) => {
-              setNewsLetter(event.target.checked);
-            }}
-          />
-          <div className="checkBoxAndText">
-            <span>S'inscrire à notre newsletter (même s'il n'y en a pas)</span>
-          </div>
-          <input className="submitButton" type="submit" value="S'inscrire" />
+
+          <input className="submitButton" type="submit" value="Submit!" />
           <p style={{ color: "red" }}>{errorMessage}</p>
         </form>
       </div>
