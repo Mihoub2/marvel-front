@@ -1,15 +1,17 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "./singup.scss";
 
 const Signup = ({ setUser }) => {
-  const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const [newsLetter, setNewsLetter] = useState(false);
 
   const [errorMessage, setErrorMessage] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
   const onSubmitForm = async (event) => {
     event.preventDefault();
 
@@ -58,7 +60,7 @@ const Signup = ({ setUser }) => {
             onChange={(event) => {
               setEmail(event.target.value);
             }}
-          />{" "}
+          />
           <input
             className="normalInput"
             type="password"
@@ -68,8 +70,16 @@ const Signup = ({ setUser }) => {
               setPassword(event.target.value);
             }}
           />
+          <input
+            className="checkbox"
+            type="checkbox"
+            value={newsLetter}
+            onChange={(event) => {
+              setNewsLetter(event.target.checked);
+            }}
+          />
           <div className="checkBoxAndText">
-            <span>S'inscrire à notre newsletter</span>
+            <span>S'inscrire à notre newsletter (même s'il n'y en a pas)</span>
           </div>
           <input className="submitButton" type="submit" value="S'inscrire" />
           <p style={{ color: "red" }}>{errorMessage}</p>

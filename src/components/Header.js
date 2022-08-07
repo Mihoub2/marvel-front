@@ -1,8 +1,10 @@
 import logo from "../assets/logo.jpeg";
 import "./header.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ token, setUser }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="Header">
       <Link to="/">
@@ -12,13 +14,36 @@ const Header = () => {
         <Link className="favButton" to="/favorites">
           <button>Favorites</button>
         </Link>
-        <Link className="button" to="/signup">
-          <button>S'inscrire</button>
-        </Link>
-        <Link className="button" to="/connect">
-          <button>Se connecter</button>
-        </Link>
+        {token === null ? (
+          <Link className="button" to="/signup">
+            <button>S'inscrire</button>
+          </Link>
+        ) : (
+          ""
+        )}
+        {token === null ? (
+          <Link className="button" to="/connect">
+            <button>Se connecter</button>
+          </Link>
+        ) : (
+          ""
+        )}
       </div>
+      {token !== null ? (
+        <div className="disconnected">
+          <button
+            className="deco"
+            onClick={() => {
+              setUser(null);
+              navigate("/");
+            }}
+          >
+            Se déconnecter
+          </button>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

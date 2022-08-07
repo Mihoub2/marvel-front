@@ -27,14 +27,20 @@ function App() {
   };
   return (
     <Router>
-      <Header />
+      <Header token={token} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup setUser={setUser} />} />
-        <Route path="/comics/:page" element={<Comics />} />
-        <Route path="/comics/" element={<Comics />} />
-        <Route path="/characters" element={<Characters />} />{" "}
-        <Route path="/character/:characterId" element={<CharacterById />} />
+        <Route path="/comics/:page" element={<Comics setUser={setUser} />} />
+        <Route path="/comics/" element={<Comics setUser={setUser} />} />
+        <Route
+          path="/characters"
+          element={<Characters setUser={setUser} />}
+        />{" "}
+        <Route
+          path="/character/:characterId"
+          element={<CharacterById setUser={setUser} />}
+        />
       </Routes>
       <Footer />
     </Router>
