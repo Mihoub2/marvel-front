@@ -11,20 +11,16 @@ const CharacterById = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://marvelbackmihoub.herokuapp.com/comics/${characterId}`
-        );
-        setData(response.data);
-        // console.log(response.data);
-      } catch (error) {
-        console.log(error.response);
-      }
+    const comicsData = async () => {
+      const response = await axios.get(
+        `https://marvelbackend-01.herokuapp.com/comics/${characterId}`
+      );
+      setData(response.data);
       setIsLoading(false);
+      console.log(response.data);
     };
 
-    fetchData();
+    comicsData();
   }, [characterId]);
 
   return (

@@ -40,40 +40,40 @@ const Comics = () => {
             const pic = movie.thumbnail.path + "." + movie.thumbnail.extension;
 
             return (
-              <Link className="link" to={`/character/${movie._id}`}>
-                <div className="comicsLine">
-                  <div className="upperNav">
-                    <div className="monvieTitle">
-                      {arrTitle.includes("2009 Mini-Poster 6 (2009) #1") ? (
-                        <button
-                          onClick={() => {
-                            <Link to={"/"}></Link>;
-                          }}
-                        >
-                          <p>Deadpool Error!</p>
-                        </button>
-                      ) : (
-                        <div className="movieTitle">{title}</div>
-                      )}
-                    </div>
-
-                    {movie.description ? (
-                      <div className="description">{movie.description}</div>
+              // <Link className="link" to={`/character/${movie._id}`}>
+              <div className="comicsLine">
+                <div className="upperNav">
+                  <div className="monvieTitle">
+                    {arrTitle.includes("2009 Mini-Poster 6 (2009) #1") ? (
+                      <button
+                        onClick={() => {
+                          <Link to={"/"}></Link>;
+                        }}
+                      >
+                        <p>Deadpool Error!</p>
+                      </button>
                     ) : (
-                      "No description for this comics, but it may be awesome! Click for more informations !"
+                      <div className="movieTitle">{title}</div>
                     )}
                   </div>
-                  <div className="bottomNav">
-                    <div className="comicsPic">
-                      {pic.includes("image_not_available") ? (
-                        <img className="realcomicsPic" src={deadpool} alt="" />
-                      ) : (
-                        <img className="realcomicsPic" src={pic} alt="" />
-                      )}
-                    </div>
+
+                  {movie.description ? (
+                    <div className="description">{movie.description}</div>
+                  ) : (
+                    "No description for this comics, but it may be awesome! Click for more informations !"
+                  )}
+                </div>
+                <div className="bottomNav">
+                  <div className="comicsPic">
+                    {pic.includes("image_not_available") ? (
+                      <img className="realcomicsPic" src={deadpool} alt="" />
+                    ) : (
+                      <img className="realcomicsPic" src={pic} alt="" />
+                    )}
                   </div>
                 </div>
-              </Link>
+              </div>
+              // </Link>
             );
           })}
         </div>{" "}

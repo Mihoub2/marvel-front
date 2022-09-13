@@ -9,14 +9,11 @@ const Footer = () => {
         <div className="colomns">
           <div className="colomn">
             <p>About me</p>
-            <a href="https://github.com/Mihoub2?tab=repositories">
+            <a href="https://github.com/Mihoub2">
               <span>Git hub</span>
             </a>
-            <a href="https://twitter.com/MihoubDbc">
-              <span>Twitter</span>
-            </a>
-            <a href="https://www.facebook.com/mihoub.dbc/">
-              <span>Facebook</span>
+            <a href="https://www.linkedin.com/in/mihoub/">
+              <span>Linkedin</span>
             </a>
           </div>
           <div className="colomn">

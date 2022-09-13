@@ -16,6 +16,7 @@ const Characters = () => {
         const response = await axios.get(
           `https://marvelbackmihoub.herokuapp.com/characters?name=${input}`
         );
+        console.log(response.data);
         setData(response.data);
       } catch (error) {
         console.log(error);
