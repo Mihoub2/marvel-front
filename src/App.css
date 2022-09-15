@@ -5,4 +5,11 @@
   margin: 0;
   /* font-family: "IBM Plex Sans", sans-serif; */
   font-family: "Marvel", sans-serif;
+  font-style: none;
+  text-decoration: none;
+}
+link:visited {
+  background-color: yellow;
+  border-color: hotpink;
+  color: hotpink;
 }

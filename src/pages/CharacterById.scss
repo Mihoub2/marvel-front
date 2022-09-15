@@ -9,9 +9,7 @@
 .IdContainer {
   font-family: "Hanalei Fill";
 }
-.charactId {
-  width: 100%;
-}
+
 .upperHero {
   font-family: "Marvel", sans-serif;
 
@@ -26,7 +24,6 @@
 }
 .block {
   display: flex;
-  flex-wrap: wrap;
   height: 500px;
   margin-left: 10px;
   flex-direction: column;
