@@ -23,12 +23,18 @@ const Connect = ({ setUser }) => {
       );
       if (response.data.token) {
         setUser(response.data.token);
-        navigate("/");
+        navigate("/comics");
       }
     } catch (error) {
       console.log(error.response);
-      if (error.response.status === 401) {
+      if (!email && !password) {
         setErrorMessage("Make an effort!");
+      }
+      if (error.response.status === 409) {
+        setErrorMessage("Cet email a déjà un compte !");
+      }
+      if (error.response.status === 406) {
+        setErrorMessage("Bro, something's missing...!");
       }
     }
   };

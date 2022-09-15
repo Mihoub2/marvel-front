@@ -14,6 +14,7 @@ import Characters from "./pages/Characters";
 import CharacterById from "./pages/CharacterById";
 import Signup from "./pages/Singup";
 import Connect from "./pages/Connect";
+import ScrollToTop from "./pages/ScrollToTop";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || null);
@@ -44,6 +45,7 @@ function App() {
           element={<CharacterById setUser={setUser} />}
         />
       </Routes>
+      <ScrollToTop />
       <Footer />
     </Router>
   );

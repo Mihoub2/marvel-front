@@ -7,43 +7,50 @@ const Header = ({ token, setUser }) => {
 
   return (
     <div className="Header">
-      <Link to="/">
+      <Link className="headerPic" to="/">
         <img src={logo} alt="" />
       </Link>
-      <div className="rightButton">
-        <Link className="favButton" to="/favorites">
-          <button>Favorites</button>
-        </Link>
-        {token === null ? (
-          <Link className="button" to="/signup">
-            <button>SingUp!</button>
+      <div className="allButton">
+        <div className="rightButton">
+          <Link className="favButton" to="/">
+            <button>Home</button>
           </Link>
-        ) : (
-          ""
-        )}
-        {token === null ? (
-          <Link className="button" to="/connect">
-            <button>Connect!</button>
+          <Link className="favButton" to="/characters">
+            <button>Characters</button>
           </Link>
+          <Link className="favButton" to="/comics">
+            <button>Comics</button>
+          </Link>
+          {token === null ? (
+            <Link className="button" to="/signup">
+              <button>SingUp!</button>
+            </Link>
+          ) : (
+            ""
+          )}
+          {token === null ? (
+            <Link className="button" to="/connect">
+              <button>Connect!</button>
+            </Link>
+          ) : (
+            ""
+          )}
+        </div>
+        {token !== null ? (
+          <div>
+            <button
+              onClick={() => {
+                setUser(null);
+                navigate("/");
+              }}
+            >
+              Se déconnecter
+            </button>
+          </div>
         ) : (
           ""
         )}
       </div>
-      {token !== null ? (
-        <div className="disconnected">
-          <button
-            className="deco"
-            onClick={() => {
-              setUser(null);
-              navigate("/");
-            }}
-          >
-            Se déconnecter
-          </button>
-        </div>
-      ) : (
-        ""
-      )}
     </div>
   );
 };

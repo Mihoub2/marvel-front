@@ -1,14 +1,14 @@
 .singupContainer {
-  max-width: 100%;
+  // max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 400px;
 }
 .formContainer {
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 400px;
+  height: auto;
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
@@ -22,19 +22,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 10px;
 }
 .normalInput {
-  height: 50px;
+  height: 100%;
   border-radius: 20px;
   width: 100%;
 
   text-align: center;
 }
 .submitButton {
-  height: 50px;
+  height: 100%;
   border-radius: 20px;
-  width: 50px;
+  width: 100%;
 
   text-align: center;
 }
