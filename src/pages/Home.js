@@ -1,12 +1,14 @@
 import "./home.scss";
 import { Link } from "react-router-dom";
 
-const Home = ({ token }) => {
+const Home = ({ token, setUser }) => {
+  console.log(token);
   return (
     <div className="home">
       <div className="">
         <div className="">
           <h1 className="title">Comics Research !</h1>
+
           <Link className="" to={token ? "/comics" : "/connect"}>
             <button className="">Comics</button>
           </Link>

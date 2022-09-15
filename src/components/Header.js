@@ -12,15 +12,6 @@ const Header = ({ token, setUser }) => {
       </Link>
       <div className="allButton">
         <div className="rightButton">
-          <Link className="favButton" to="/">
-            <button>Home</button>
-          </Link>
-          <Link className="favButton" to="/characters">
-            <button>Characters</button>
-          </Link>
-          <Link className="favButton" to="/comics">
-            <button>Comics</button>
-          </Link>
           {token === null ? (
             <Link className="button" to="/signup">
               <button>SingUp!</button>
@@ -37,8 +28,15 @@ const Header = ({ token, setUser }) => {
           )}
         </div>
         {token !== null ? (
-          <div>
+          <div className="ifConnected">
+            <Link className="button" to="/comics">
+              <button>Comics</button>
+            </Link>
+            <Link className="button" to="/characters">
+              <button>Characters</button>
+            </Link>
             <button
+              className="buttonDeco"
               onClick={() => {
                 setUser(null);
                 navigate("/");

@@ -46,7 +46,6 @@ const CharacterById = () => {
             </p>
           </div>
 
-          <div></div>
           <div className="mainCharactId">
             {data.comics.map((item, index) => {
               console.log(item);

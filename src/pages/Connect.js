@@ -23,6 +23,7 @@ const Connect = ({ setUser }) => {
       );
       if (response.data.token) {
         setUser(response.data.token);
+        console.log(response.data);
         navigate("/comics");
       }
     } catch (error) {
