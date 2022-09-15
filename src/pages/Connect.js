@@ -28,10 +28,10 @@ const Connect = ({ setUser }) => {
       }
     } catch (error) {
       console.log(error.response);
-      if (!email && !password) {
+      if (!email || !password) {
         setErrorMessage("Make an effort!");
       }
-      if (error.response.status === 409) {
+      if (error.response.status === 401) {
         setErrorMessage("Cet email a déjà un compte !");
       }
       if (error.response.status === 406) {
