@@ -53,7 +53,7 @@ const CharacterById = () => {
 
               return (
                 <>
-                  <div className="charactId">
+                  <div key={index} className="charactId">
                     <div className="block">
                       <div className="itemTitle">{item.title}</div>
                       <div>

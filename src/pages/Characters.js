@@ -49,7 +49,7 @@ const Characters = () => {
             const pic = item.thumbnail.path + "." + item.thumbnail.extension;
             return (
               <>
-                <div className="characLine">
+                <div key={index} className="characLine">
                   <div className="upperLine">
                     <Link className="linkcharac" to={`/character/${item._id}`}>
                       <div className="caractName">{item.name}</div>

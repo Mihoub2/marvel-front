@@ -14,14 +14,14 @@ const Header = ({ token, setUser }) => {
         <div className="rightButton">
           {token === null ? (
             <Link className="button" to="/signup">
-              <button>SingUp!</button>
+              <button className="headerButton">SingUp!</button>
             </Link>
           ) : (
             ""
           )}
           {token === null ? (
             <Link className="button" to="/connect">
-              <button>Connect!</button>
+              <button className="headerButton">Connect!</button>
             </Link>
           ) : (
             ""
@@ -30,10 +30,10 @@ const Header = ({ token, setUser }) => {
         {token !== null ? (
           <div className="ifConnected">
             <Link className="button" to="/comics">
-              <button>Comics</button>
+              <button className="headerButton">Comics</button>
             </Link>
             <Link className="button" to="/characters">
-              <button>Characters</button>
+              <button className="">Characters</button>
             </Link>
             <button
               className="buttonDeco"

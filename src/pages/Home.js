@@ -5,7 +5,7 @@ const Home = ({ token, setUser }) => {
   console.log(token);
   return (
     <div className="home">
-      <div className="">
+      <div className="middleButton">
         <div className="">
           <h1 className="title">Comics Research !</h1>
 

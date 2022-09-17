@@ -37,3 +37,38 @@ a:visited {
   border-color: hotpink;
   color: hotpink;
 }
+@media (max-width: 600px) {
+  .footer {
+    height: 200px;
+    background-image: url(../assets/deadpoolsleep.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+  }
+  .footerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-sizing: border-box;
+  }
+  .colomns {
+    display: flex;
+    flex-direction: row;
+
+    // @media (max-width: 1000px) {
+    //   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    // }
+  }
+  .colomn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+  }
+}
